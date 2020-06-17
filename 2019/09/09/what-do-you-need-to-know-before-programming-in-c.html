@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>What do you need to know before programming in C? | Junjie Yang</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="What do you need to know before programming in C?" />
+<meta name="author" content="Junjie Yang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The California sun and the movie stars" />
+<meta property="og:description" content="The California sun and the movie stars" />
+<link rel="canonical" href="http://localhost:4000/2019/09/09/what-do-you-need-to-know-before-programming-in-c.html" />
+<meta property="og:url" content="http://localhost:4000/2019/09/09/what-do-you-need-to-know-before-programming-in-c.html" />
+<meta property="og:site_name" content="Junjie Yang" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-09T00:00:00+08:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/09/09/what-do-you-need-to-know-before-programming-in-c.html"},"url":"http://localhost:4000/2019/09/09/what-do-you-need-to-know-before-programming-in-c.html","author":{"@type":"Person","name":"Junjie Yang"},"headline":"What do you need to know before programming in C?","description":"The California sun and the movie stars","datePublished":"2019-09-09T00:00:00+08:00","dateModified":"2019-09-09T00:00:00+08:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Junjie Yang" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Junjie Yang</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/posts/">Posts</a><a class="page-link" href="/pubs/">Publications</a><a class="page-link" href="/shared-tasks/">Shared Tasks</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">What do you need to know before programming in C?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-09-09T00:00:00+08:00" itemprop="datePublished">Sep 9, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <blockquote>
+  <p>The California sun and the movie stars</p>
+</blockquote>
+
+<blockquote>
+  <p>And I watched the skies getting light as I write</p>
+</blockquote>
+
+<p>This tutorial is designed for the course cs139, C Programming and Algorithm Analysis of École d’Ingénieur SJTU-ParisTech. It’s not really an introduction about C programming language, but about some important things that we need to know before writing the real code.</p>
+
+<p>You can follow this tutorial on Linux machines or macOS. But what about windows? Hmm…we don’t write code “sur les fenêtres”.</p>
+
+<h2 id="write-your-first-program">Write your first program</h2>
+
+<p>The premier thing and the principal work that you will do afterwards is writing the real code. First open the <strong>terminal</strong>  on your machine, which is the program where you give your orders/commands to the computer like a chef. After opening the terminal, copy the line (except the symbol <code class="highlighter-rouge">$</code>) below to the terminal and press <strong>Enter</strong>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">'This is my first Linux/Unix command!'</span>
+</code></pre></div></div>
+
+<p>Voilà! You’ve made your premier step! Normally you will see something like this:
+<img src="/assets/imgs/posts/first_cmd.png" alt="first_cmd" /></p>
+
+<blockquote>
+  <p>The line beginning with <code class="highlighter-rouge">$</code> is the command that we execute in the terminal.</p>
+</blockquote>
+
+<p>Enter the <code class="highlighter-rouge">Documents</code> directory, create a directory named <code class="highlighter-rouge">cs139</code> and enter it:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>Documents
+<span class="nv">$ </span><span class="nb">mkdir </span>cs139
+<span class="nv">$ </span><span class="nb">cd </span>cs139
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">cd</code>: enter a directory</li>
+  <li><code class="highlighter-rouge">mkdir</code>: make a directory</li>
+</ul>
+
+<p>Make a C program source file named <code class="highlighter-rouge">first_prog</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">touch </span>first_prog.c
+</code></pre></div></div>
+
+<p>Now open this file with any text editor that you like. (I prefer not to do any recommandation here to avoid starting a debate)</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Preprocessor Section */</span>
+<span class="cp">#include &lt;stdio.h&gt;                      // 'printf' needs this file
+</span>
+<span class="cm">/* Program Body */</span> 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>                        <span class="c1">// This is where the program begins</span>
+    <span class="kt">char</span> <span class="n">french</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Bonjour"</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">german</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Guten Tag"</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">chinese</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"ni hao"</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">num_lang</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"We will use %d different languages to say hello:</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">num_lang</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s(French), %s(German) and %s(Chinese)</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">french</span><span class="p">,</span> <span class="n">german</span><span class="p">,</span> <span class="n">chinese</span><span class="p">);</span>
+  
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>                          <span class="c1">// this statement terminates the program</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<blockquote>
+  <p>Pay attention to the indentation even though the compiler doesn’t care about it and don’t leave out <code class="highlighter-rouge">;</code> at the end of each line!</p>
+</blockquote>
+
+<p>It is worth remembering that the code we are writing here is “text”, and machines can not understand it at all. Machines can only understand the sequences of “0” and “1”.</p>
+
+<h2 id="compilation">Compilation</h2>
+
+<p>A <strong>compiler</strong> is a program which translates source code from a high-level programming language (e.g., C, C++ or Swift) to a lower level language (e.g., assembly language or machine code).</p>
+
+<p>For C programming language, two popular compilers exist:</p>
+
+<ul>
+  <li><a href="https://gcc.gnu.org">GCC</a> (GNU Compiler Collection)</li>
+  <li><a href="https://clang.llvm.org">Clang</a> (C language family frontend for LLVM)</li>
+</ul>
+
+<h3 id="get-compilers-on-your-own-propre-operating-system">Get compilers on your own propre operating system</h3>
+
+<blockquote>
+  <p>If you are working on the machines of IE lab, you can skip this part, since <code class="highlighter-rouge">GCC</code> has already been installed on them.</p>
+</blockquote>
+
+<h4 id="ubuntudebian">Ubuntu/Debian</h4>
+
+<p>For Ubuntu/Debian users, you can get <strong>GCC</strong> from your package manager, APT (Advanced Packaging Tool):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>build-essential
+</code></pre></div></div>
+
+<p>If you want to install Clang for your Debian/Ubuntu machine, please refer to this page: <a href="https://apt.llvm.org">https://apt.llvm.org</a></p>
+
+<h4 id="macos">macOS</h4>
+
+<p>For macOS users, <strong>Clang</strong> is recommended. Fun fact: Apple is one of the main contributors to the Clang project. Here, we will take a tour about how to install Clang <strong>without</strong> Xcode.</p>
+
+<p>Install Command Line Tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ xcode-select --install
+</code></pre></div></div>
+
+<p>Then follow the instructions on the screen.</p>
+
+<h4 id="ubuntudebianmacos">Ubuntu/Debian/macOS</h4>
+
+<blockquote>
+  <p>Even though you installed Clang on you OS, you can still use command <code class="highlighter-rouge">gcc</code> to compile your C programs. 👍</p>
+</blockquote>
+
+<p>Check if the compiler is successfully installed:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gcc <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>On <strong>Debain</strong> it will output something like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
+Copyright (C) 2016 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre></div></div>
+
+<h3 id="compile-your-first-program">Compile your first program</h3>
+
+<p>The simplest way to use <code class="highlighter-rouge">gcc</code> is:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">-o</span> program file1.c file2.c ...
+</code></pre></div></div>
+
+<ul>
+  <li>Flag <code class="highlighter-rouge">-o</code> specifies the name of the output file, which is the executable that the compiler creates.</li>
+  <li>Leaving out the <code class="highlighter-rouge">-o</code> will output the executable with the default name <code class="highlighter-rouge">a.out</code>.</li>
+</ul>
+
+<p>Now let’s compile the program just written:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gcc <span class="nt">-o</span> first_prog first_prog.c
+</code></pre></div></div>
+
+<p>If you want to get the debugging information and all the warnings given by gcc, add the <code class="highlighter-rouge">-Wall</code> and <code class="highlighter-rouge">-g</code> flag:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc <span class="nt">-g</span> <span class="nt">-Wall</span> <span class="nt">-o</span> program file1.c file2.c ...
+</code></pre></div></div>
+
+<h2 id="running">Running</h2>
+
+<p>Executing your program (binary file) is quite simple and easy:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./first_prog
+</code></pre></div></div>
+
+<p>The program will output something as below if you do all the steps correctly:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>We will use 3 different languages to say hello:
+Bonjour(French), Guten Tag(German) and ni hao(Chinese)
+</code></pre></div></div>
+
+<h2 id="à-vous-jouer">À vous jouer!</h2>
+
+<h3>Exercice 1</h3>
+
+<p>Try to add other languages in the program , re-compile and re-run your program.</p>
+
+<h3>Exercice 2</h3>
+
+<p>Try to get the length of the string <code class="highlighter-rouge">french</code>: add those statements after the <code class="highlighter-rouge">char french[] = "Bonjour"</code>:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">french</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"Bonjour is of length %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>What result do you get? Is it strange? But why?</p>
+
+<h3>Exercice 3</h3>
+
+<p>Add these two lines before the <code class="highlighter-rouge">return</code> statement:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">out_of_index</span> <span class="o">=</span> <span class="n">french</span><span class="p">[</span><span class="mi">9</span><span class="p">];</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"The value at index 9 is: %x</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">out_of_index</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Re-compile it with the warning option enabled, what information or warning do you get from the compiler? Is it same between <strong>Clang</strong> and <strong>GCC</strong>? Re-run it, does the program fail?</p>
+<blockquote>
+  <p>The C Compiler doesn’t prevent you from making mistakes like “out of index” and many others ☹️!!!</p>
+</blockquote>
+
+<h3>Exercice* 4</h3>
+
+<p>Create a new file:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">argc</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"The total is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">total</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Compile and run it with the command below:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gcc <span class="nt">-g</span> <span class="nt">-o</span> <span class="nb">sum </span>sum.c
+<span class="nv">$ </span>./sum 3 4 5
+</code></pre></div></div>
+
+<p>Which runtime error have you encountered?</p>
+
+<p>If you don’t understand at all what it is or how to solve it, <strong>DO NOT WORRY</strong>! We will come back to it soon, maybe with Prof Lu? This example just wants to show you that this kind of error will happen very often later!</p>
+
+<h3>Exercice 5</h3>
+
+<p>Delete or add some lines some lines as you like in the program, re-compile and re-run it, which problem will you get? Can you figure out them yourself?</p>
+
+<hr />
+<p>If you have some questions or just comments, don’t hesitate to contact me via: jj-yang#sjtu.edu.cn (Please replace # by @) 😉</p>
+
+
+  </div><a class="u-url" href="/2019/09/09/what-do-you-need-to-know-before-programming-in-c.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Junjie Yang</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Junjie Yang</li><li><a class="u-email" href="mailto:jj-yang@sjtu.edu.cn">jj-yang@sjtu.edu.cn</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/chunchiehy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">chunchiehy</span></a></li><li><a href="https://www.twitter.com/junjievyang"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">junjievyang</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Reserved for the future...
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

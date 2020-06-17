@@ -1,2 +1,224 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-17T19:16:56+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Junjie Yang</title><subtitle>Reserved for the future...
-</subtitle><author><name>Junjie Yang</name></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-17T21:22:51+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Junjie Yang</title><subtitle>Reserved for the future...
+</subtitle><author><name>Junjie Yang</name></author><entry><title type="html">What do you need to know before programming in C?</title><link href="http://localhost:4000/2019/09/09/what-do-you-need-to-know-before-programming-in-c.html" rel="alternate" type="text/html" title="What do you need to know before programming in C?" /><published>2019-09-09T00:00:00+08:00</published><updated>2019-09-09T00:00:00+08:00</updated><id>http://localhost:4000/2019/09/09/what-do-you-need-to-know-before-programming-in-c</id><content type="html" xml:base="http://localhost:4000/2019/09/09/what-do-you-need-to-know-before-programming-in-c.html">&lt;blockquote&gt;
+  &lt;p&gt;The California sun and the movie stars&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;And I watched the skies getting light as I write&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This tutorial is designed for the course cs139, C Programming and Algorithm Analysis of École d’Ingénieur SJTU-ParisTech. It’s not really an introduction about C programming language, but about some important things that we need to know before writing the real code.&lt;/p&gt;
+
+&lt;p&gt;You can follow this tutorial on Linux machines or macOS. But what about windows? Hmm…we don’t write code “sur les fenêtres”.&lt;/p&gt;
+
+&lt;h2 id=&quot;write-your-first-program&quot;&gt;Write your first program&lt;/h2&gt;
+
+&lt;p&gt;The premier thing and the principal work that you will do afterwards is writing the real code. First open the &lt;strong&gt;terminal&lt;/strong&gt;  on your machine, which is the program where you give your orders/commands to the computer like a chef. After opening the terminal, copy the line (except the symbol &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt;) below to the terminal and press &lt;strong&gt;Enter&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'This is my first Linux/Unix command!'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Voilà! You’ve made your premier step! Normally you will see something like this:
+&lt;img src=&quot;/assets/imgs/posts/first_cmd.png&quot; alt=&quot;first_cmd&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The line beginning with &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; is the command that we execute in the terminal.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Enter the &lt;code class=&quot;highlighter-rouge&quot;&gt;Documents&lt;/code&gt; directory, create a directory named &lt;code class=&quot;highlighter-rouge&quot;&gt;cs139&lt;/code&gt; and enter it:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;Documents
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir &lt;/span&gt;cs139
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;cs139
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;: enter a directory&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir&lt;/code&gt;: make a directory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Make a C program source file named &lt;code class=&quot;highlighter-rouge&quot;&gt;first_prog&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;first_prog.c
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now open this file with any text editor that you like. (I prefer not to do any recommandation here to avoid starting a debate)&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* Preprocessor Section */&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;                      // 'printf' needs this file
+&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* Program Body */&lt;/span&gt; 
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;                        &lt;span class=&quot;c1&quot;&gt;// This is where the program begins&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;french&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Bonjour&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;german&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Guten Tag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chinese&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ni hao&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_lang&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;We will use %d different languages to say hello:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s(French), %s(German) and %s(Chinese)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;french&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;german&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chinese&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;                          &lt;span class=&quot;c1&quot;&gt;// this statement terminates the program&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Pay attention to the indentation even though the compiler doesn’t care about it and don’t leave out &lt;code class=&quot;highlighter-rouge&quot;&gt;;&lt;/code&gt; at the end of each line!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It is worth remembering that the code we are writing here is “text”, and machines can not understand it at all. Machines can only understand the sequences of “0” and “1”.&lt;/p&gt;
+
+&lt;h2 id=&quot;compilation&quot;&gt;Compilation&lt;/h2&gt;
+
+&lt;p&gt;A &lt;strong&gt;compiler&lt;/strong&gt; is a program which translates source code from a high-level programming language (e.g., C, C++ or Swift) to a lower level language (e.g., assembly language or machine code).&lt;/p&gt;
+
+&lt;p&gt;For C programming language, two popular compilers exist:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gcc.gnu.org&quot;&gt;GCC&lt;/a&gt; (GNU Compiler Collection)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://clang.llvm.org&quot;&gt;Clang&lt;/a&gt; (C language family frontend for LLVM)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;get-compilers-on-your-own-propre-operating-system&quot;&gt;Get compilers on your own propre operating system&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you are working on the machines of IE lab, you can skip this part, since &lt;code class=&quot;highlighter-rouge&quot;&gt;GCC&lt;/code&gt; has already been installed on them.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;ubuntudebian&quot;&gt;Ubuntu/Debian&lt;/h4&gt;
+
+&lt;p&gt;For Ubuntu/Debian users, you can get &lt;strong&gt;GCC&lt;/strong&gt; from your package manager, APT (Advanced Packaging Tool):&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt update
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;build-essential
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you want to install Clang for your Debian/Ubuntu machine, please refer to this page: &lt;a href=&quot;https://apt.llvm.org&quot;&gt;https://apt.llvm.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;macos&quot;&gt;macOS&lt;/h4&gt;
+
+&lt;p&gt;For macOS users, &lt;strong&gt;Clang&lt;/strong&gt; is recommended. Fun fact: Apple is one of the main contributors to the Clang project. Here, we will take a tour about how to install Clang &lt;strong&gt;without&lt;/strong&gt; Xcode.&lt;/p&gt;
+
+&lt;p&gt;Install Command Line Tools:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ xcode-select --install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then follow the instructions on the screen.&lt;/p&gt;
+
+&lt;h4 id=&quot;ubuntudebianmacos&quot;&gt;Ubuntu/Debian/macOS&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Even though you installed Clang on you OS, you can still use command &lt;code class=&quot;highlighter-rouge&quot;&gt;gcc&lt;/code&gt; to compile your C programs. 👍&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Check if the compiler is successfully installed:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gcc &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;On &lt;strong&gt;Debain&lt;/strong&gt; it will output something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
+Copyright (C) 2016 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;compile-your-first-program&quot;&gt;Compile your first program&lt;/h3&gt;
+
+&lt;p&gt;The simplest way to use &lt;code class=&quot;highlighter-rouge&quot;&gt;gcc&lt;/code&gt; is:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcc &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; program file1.c file2.c ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Flag &lt;code class=&quot;highlighter-rouge&quot;&gt;-o&lt;/code&gt; specifies the name of the output file, which is the executable that the compiler creates.&lt;/li&gt;
+  &lt;li&gt;Leaving out the &lt;code class=&quot;highlighter-rouge&quot;&gt;-o&lt;/code&gt; will output the executable with the default name &lt;code class=&quot;highlighter-rouge&quot;&gt;a.out&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now let’s compile the program just written:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gcc &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; first_prog first_prog.c
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you want to get the debugging information and all the warnings given by gcc, add the &lt;code class=&quot;highlighter-rouge&quot;&gt;-Wall&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;-g&lt;/code&gt; flag:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcc &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Wall&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; program file1.c file2.c ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;running&quot;&gt;Running&lt;/h2&gt;
+
+&lt;p&gt;Executing your program (binary file) is quite simple and easy:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./first_prog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The program will output something as below if you do all the steps correctly:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;We will use 3 different languages to say hello:
+Bonjour(French), Guten Tag(German) and ni hao(Chinese)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;à-vous-jouer&quot;&gt;À vous jouer!&lt;/h2&gt;
+
+&lt;h3&gt;Exercice 1&lt;/h3&gt;
+
+&lt;p&gt;Try to add other languages in the program , re-compile and re-run your program.&lt;/p&gt;
+
+&lt;h3&gt;Exercice 2&lt;/h3&gt;
+
+&lt;p&gt;Try to get the length of the string &lt;code class=&quot;highlighter-rouge&quot;&gt;french&lt;/code&gt;: add those statements after the &lt;code class=&quot;highlighter-rouge&quot;&gt;char french[] = &quot;Bonjour&quot;&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;french&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Bonjour is of length %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;What result do you get? Is it strange? But why?&lt;/p&gt;
+
+&lt;h3&gt;Exercice 3&lt;/h3&gt;
+
+&lt;p&gt;Add these two lines before the &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; statement:&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out_of_index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;french&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The value at index 9 is: %x&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out_of_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Re-compile it with the warning option enabled, what information or warning do you get from the compiler? Is it same between &lt;strong&gt;Clang&lt;/strong&gt; and &lt;strong&gt;GCC&lt;/strong&gt;? Re-run it, does the program fail?&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The C Compiler doesn’t prevent you from making mistakes like “out of index” and many others ☹️!!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Exercice* 4&lt;/h3&gt;
+
+&lt;p&gt;Create a new file:&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;stdio.h&amp;gt;
+#include&amp;lt;stdlib.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;atoi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The total is %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Compile and run it with the command below:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gcc &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum &lt;/span&gt;sum.c
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./sum 3 4 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Which runtime error have you encountered?&lt;/p&gt;
+
+&lt;p&gt;If you don’t understand at all what it is or how to solve it, &lt;strong&gt;DO NOT WORRY&lt;/strong&gt;! We will come back to it soon, maybe with Prof Lu? This example just wants to show you that this kind of error will happen very often later!&lt;/p&gt;
+
+&lt;h3&gt;Exercice 5&lt;/h3&gt;
+
+&lt;p&gt;Delete or add some lines some lines as you like in the program, re-compile and re-run it, which problem will you get? Can you figure out them yourself?&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;If you have some questions or just comments, don’t hesitate to contact me via: jj-yang#sjtu.edu.cn (Please replace # by @) 😉&lt;/p&gt;</content><author><name>Junjie Yang</name></author><category term="teaching" /><category term="C" /><category term="cs139" /><summary type="html">The California sun and the movie stars</summary></entry></feed>
