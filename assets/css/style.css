@@ -133,6 +133,29 @@ header ul li + li + li { border-right: none; width: 89px; }
 
 header ul a strong { font-size: 14px; display: block; color: #222; }
 
+.page-tabs { display: flex; flex-direction: column; align-items: stretch; gap: 2px; margin: 0 auto; width: 150px; }
+
+.page-tabs a { display: block; box-sizing: border-box; width: 100%; padding: 10px 10px 10px 14px; border-left: 3px solid transparent; color: #043361; font-size: 22px; font-weight: 600; line-height: 1.25; text-align: left; text-decoration: none; white-space: nowrap; transition: border-color .15s ease, color .15s ease; }
+
+.page-tabs a:hover, .page-tabs a:focus-visible { color: #159bd7; text-decoration: none; }
+
+.page-tabs a.active { border-left-color: #159bd7; color: #043361; }
+
+.page-tabs a.active:hover, .page-tabs a.active:focus-visible { color: #159bd7; }
+
+.talk-entry { margin: 0 0 1.35em; }
+
+.talk-entry > strong { color: #043361; }
+
+.talk-entry em { display: inline-block; margin-top: 3px; }
+
+.talk-entry small { color: #777; font-size: 0.88em; }
+
+@media (prefers-color-scheme: dark) { .page-tabs a { border-left-color: transparent; color: #c9d8e8; }
+  .page-tabs a:hover, .page-tabs a:focus-visible { color: #3eb7f0; }
+  .page-tabs a.active { border-left-color: #3eb7f0; color: #c9d8e8; }
+  .talk-entry > strong { color: #3eb7f0; }
+  .talk-entry small { color: #aeb3bf; } }
 section { width: 650px; float: right; padding-top: 4.0em; padding-bottom: 50px; }
 
 small { font-size: 11px; }
