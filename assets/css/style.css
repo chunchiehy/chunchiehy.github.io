@@ -135,7 +135,7 @@ header ul a strong { font-size: 14px; display: block; color: #222; }
 
 .page-tabs { display: flex; flex-direction: column; align-items: stretch; gap: 2px; margin: 0 auto; width: 150px; }
 
-.page-tabs a { display: block; box-sizing: border-box; width: 100%; padding: 10px 10px 10px 14px; border-left: 3px solid transparent; color: #043361; font-size: 22px; font-weight: 600; line-height: 1.25; text-align: left; text-decoration: none; white-space: nowrap; transition: border-color .15s ease, color .15s ease; }
+.page-tabs a { display: block; box-sizing: border-box; width: 100%; padding: 10px 10px 10px 14px; border-left: 3px solid transparent; color: #043361; font-size: 25px; font-weight: 600; line-height: 1.25; text-align: left; text-decoration: none; white-space: nowrap; transition: border-color .15s ease, color .15s ease; }
 
 .page-tabs a:hover, .page-tabs a:focus-visible { color: #159bd7; text-decoration: none; }
 
@@ -178,8 +178,8 @@ footer { width: 232px; float: left; position: fixed; bottom: 30px; -webkit-font-
   .pub-row { display: flex; align-items: center; }
   header { padding: 0; }
   pre, code { word-wrap: normal; } }
-@media print, screen and (max-width: 480px) { .page-tabs { flex-direction: row; justify-content: center; gap: 8px; width: 100%; margin: 16px auto 0; }
-  .page-tabs a { width: auto; padding: 8px 3px; border-left: 0; border-bottom: 3px solid transparent; font-size: 16px; text-align: center; }
+@media print, screen and (max-width: 480px) { .page-tabs { flex-direction: row; justify-content: center; gap: 2px; width: 100%; margin: 16px auto 0; }
+  .page-tabs a { width: auto; padding: 8px 1px; border-left: 0; border-bottom: 3px solid transparent; font-size: 22px; text-align: center; }
   .page-tabs a.active { border-bottom-color: #159bd7; }
   .pub-row { display: block; align-items: center; }
   body { padding: 15px; }
